@@ -38,8 +38,8 @@ class EditUser extends Component
     public function delete($id)
     {
         User::find($id)->delete();
-        session()->flash('delete', 'delete user is success');
         $this->emit('edit');
+        session()->flash('delete', 'delete user is success');
     }
 
     public function update($id)

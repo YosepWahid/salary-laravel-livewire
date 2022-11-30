@@ -49,11 +49,11 @@
                                 <td>Total : {{ $data->permissions->count() }}</td>
                                 @can('Update Permission')
                                     <td>
-                                        @livewire('managament.edit-permission', ['posting' => $data, key('permission', $data->id)])
+                                        @livewire('managament.edit-permission', ['posting' => $data], key('posting' . $data->id))
                                     </td>
                                 @elsecan('Delete Permission')
                                     <td>
-                                        @livewire('managament.edit-permission', ['posting' => $data, key('permission', $data->id)])
+                                        @livewire('managament.edit-permission', ['posting' => $data], key('posting' . $data->id))
                                     </td>
                                 @endcan
                             @endif
@@ -67,11 +67,11 @@
                             <td>Total : {{ $data->permissions->count() }}</td>
                             @can('Update Permission')
                                 <td>
-                                    @livewire('managament.edit-permission', ['posting' => $data, key('permission', $data->id)])
+                                    @livewire('managament.edit-permission', ['posting' => $data], key('permission', $data->id))
                                 </td>
                             @elsecan('Delete Permission')
                                 <td>
-                                    @livewire('managament.edit-permission', ['posting' => $data, key('permission', $data->id)])
+                                    @livewire('managament.edit-permission', ['posting' => $data], key('permission', $data->id))
                                 </td>
                             @endcan
                         </tr>

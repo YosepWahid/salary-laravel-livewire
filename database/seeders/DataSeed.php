@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
-class DatabaseSeeder extends Seeder
+class DataSeed extends Seeder
 {
     /**
      * Seed the application's database.
@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $user = User::factory()->count(10)->create();
+
+
         // SuperAdmin Prepair
         // $super = User::create([
         //     'name' => "YosepWahid",
@@ -26,16 +29,17 @@ class DatabaseSeeder extends Seeder
         // $super->assignRole(['SuperAdmin']);
 
         // all inside permission
-        $data = Role::find(4);
-        $permission = Permission::all();
-        $ps = $permission->pluck('name');
-        $data->syncPermissions($ps);
+        // $data = Role::find(4);
+        // $permission = Permission::all();
+        // $ps = $permission->pluck('name');
+        // $data->syncPermissions($ps);
 
         // role
+        // Role::create(['name' => 'Employee']);
+        // Role::create(['name' => 'Treasurer']);
+        // Role::create(['name' => 'Staff']);
+        // Role::create(['name' => 'Admin']);
         // Role::create(['name' => 'SuperAdmin']);
-        // Role::create(['name' => 'admin']);
-        // Role::create(['name' => 'keuangan']);
-        // Role::create(['name' => 'staff']);
 
         // user Permission
         // Permission::create(['name' => 'View User']);
@@ -53,5 +57,18 @@ class DatabaseSeeder extends Seeder
         // Permission::create(['name' => 'Create Permission']);
         // Permission::create(['name' => 'Update Permission']);
         // Permission::create(['name' => 'Delete Permission']);
+        // permission all salary
+        // Permission::create(['name' => 'View All Salary']);
+        // Permission::create(['name' => 'Create All Salary']);
+        // Permission::create(['name' => 'Import All Salary']);
+        // Permission::create(['name' => 'Update All Salary']);
+        // Permission::create(['name' => 'Detail All Salary']);
+        // Permission::create(['name' => 'Delete All Salary']);
+        // Permission::create(['name' => 'PDF All Salary']);
+        // Permission User Salary
+        // Permission::create(['name' => 'View User Salary']);
+        Permission::create(['name' => 'Detail User Salary']);
+        Permission::create(['name' => 'PDF User Salary']);
+        // permission Salary
     }
 }

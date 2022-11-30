@@ -44,11 +44,11 @@
                                 <td>{{ $data->name }}</td>
                                 @can('Update Role')
                                     <td>
-                                        @livewire('managament.edit-role', ['posting' => $data, key('roles' . $data->id)])
+                                        @livewire('managament.edit-role', ['posting' => $data], key('roles' . $data->id))
                                     </td>
                                 @elsecan('Delete Role')
                                     <td>
-                                        @livewire('managament.edit-role', ['posting' => $data, key('roles' . $data->id)])
+                                        @livewire('managament.edit-role', ['posting' => $data], key('roles' . $data->id))
                                     </td>
                                 @endcan
                             @endif
@@ -61,11 +61,11 @@
                             <td>{{ $data->name }}</td>
                             @can('Update Role')
                                 <td>
-                                    @livewire('managament.edit-role', ['posting' => $data, key('roles' . $data->id)])
+                                    @livewire('managament.edit-role', ['posting' => $data], key('roles' . $data->id))
                                 </td>
                             @elsecan('Delete Role')
                                 <td>
-                                    @livewire('managament.edit-role', ['posting' => $data, key('roles' . $data->id)])
+                                    @livewire('managament.edit-role', ['posting' => $data], key('roles' . $data->id))
                                 </td>
                             @endcan
                         </tr>
