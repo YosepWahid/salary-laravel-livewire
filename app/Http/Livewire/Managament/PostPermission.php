@@ -29,13 +29,13 @@ class PostPermission extends Component
         $searching = '%' . $this->search . '%';
         if (!$this->search) {
             return view('livewire.managament.post-permission', [
-                'roles' => Role::where('name', '!=', 'SuperAdmin')->paginate($this->show),
-                'superRoles' => Role::paginate($this->show),
+                'roles' => Role::orderBy('created_at', 'DESC')->where('name', '!=', 'SuperAdmin')->paginate($this->show),
+                'superRoles' => Role::orderBy('created_at', 'DESC')->paginate($this->show),
             ]);
         } else {
             return view('livewire.managament.post-permission', [
-                'roles' => Role::where('name', '!=', 'SuperAdmin')->where('name', 'like', $searching)->paginate($this->show),
-                'superRoles' => Role::where('name', 'like', $searching)->paginate($this->show),
+                'roles' => Role::orderBy('created_at', 'DESC')->where('name', '!=', 'SuperAdmin')->where('name', 'like', $searching)->paginate($this->show),
+                'superRoles' => Role::orderBy('created_at', 'DESC')->where('name', 'like', $searching)->paginate($this->show),
             ]);
         }
     }

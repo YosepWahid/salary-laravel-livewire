@@ -18,7 +18,7 @@
                         @foreach ($access_active as $data)
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="{{ $data }}" checked
-                                    wire:model='access_active'>
+                                    wire:model.defer='access_active'>
                                 <label class="form-check-label">
                                     {{ $data }}
                                 </label>
@@ -31,7 +31,7 @@
                         @foreach ($access_no_active as $data => $item)
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="{{ $item->name }}"
-                                    wire:model="permission.{{ $item->id }}">
+                                    wire:model.defer="permission.{{ $item->id }}">
                                 <label class="form-check-label">
                                     {{ $item->name }}
                                 </label>

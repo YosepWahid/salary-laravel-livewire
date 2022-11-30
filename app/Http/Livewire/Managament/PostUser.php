@@ -29,18 +29,18 @@ class PostUser extends Component
     {
         if (!$this->search) {
             return view('livewire.managament.post-user', [
-                'user' => User::whereHas('roles', function ($q) {
+                'user' => User::orderBy('created_at', 'DESC')->whereHas('roles', function ($q) {
                     return $q->where('name', '!=', 'SuperAdmin');
                 })->ordoesntHave('roles')->paginate($this->show),
-                'superUser' => User::paginate($this->show),
+                'superUser' => User::orderBy('created_at', 'DESC')->paginate($this->show),
             ]);
         } else {
             $searching = '%' . $this->search . '%';
             return view('livewire.managament.post-user', [
-                'user' => User::whereHas('roles', function ($q) {
+                'user' => User::orderBy('created_at', 'DESC')->whereHas('roles', function ($q) {
                     return $q->where('name', '!=', 'SuperAdmin');
                 })->ordoesntHave('roles')->orwhere('name', 'LIKE', $searching)->paginate($this->show),
-                'superUser' => User::where('name', 'like', $searching)->paginate($this->show),
+                'superUser' => User::orderBy('created_at', 'DESC')->where('name', 'like', $searching)->paginate($this->show),
             ]);
         }
     }

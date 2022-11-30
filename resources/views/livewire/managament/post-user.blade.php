@@ -43,26 +43,34 @@
                             <td class="text-muted">{{ $data->email }}</td>
                             <td>{{ $data->roles->pluck('name')->implode('[]', '') }}</td>
 
-                            @can('Update User')
-                                <td>
-                                    @livewire('managament.active-user', ['switch' => $data], key('active' . $data->id))
+                            @if ($data->id == 1)
+                                <td class="text-muted">
+                                    None Action
                                 </td>
-                            @endcan
+                                <td class="text-muted">
+                                    None Action
+                                </td>
+                            @else
+                                @can('Update User')
+                                    <td>
+                                        @livewire('managament.active-user', ['switch' => $data], key('active' . $data->id))
+                                    </td>
+                                @endcan
+                                @can('Update User')
+                                    <td>
+                                        @livewire('managament.edit-user', ['posting' => $data], key('edit' . $data->id))
+                                    </td>
+                                @elsecan('Delete User')
+                                    <td>
+                                        @livewire('managament.edit-user', ['posting' => $data], key('edit' . $data->id))
+                                    </td>
+                                @elsecan('Detail User')
+                                    <td>
+                                        @livewire('managament.edit-user', ['posting' => $data], key('edit' . $data->id))
+                                    </td>
+                                @endcan
+                            @endif
 
-
-                            @can('Update User')
-                                <td>
-                                    @livewire('managament.edit-user', ['posting' => $data], key('edit' . $data->id))
-                                </td>
-                            @elsecan('Delete User')
-                                <td>
-                                    @livewire('managament.edit-user', ['posting' => $data], key('edit' . $data->id))
-                                </td>
-                            @elsecan('Detail User')
-                                <td>
-                                    @livewire('managament.edit-user', ['posting' => $data], key('edit' . $data->id))
-                                </td>
-                            @endcan
 
                         </tr>
                     @endforeach

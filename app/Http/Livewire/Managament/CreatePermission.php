@@ -15,6 +15,10 @@ class CreatePermission extends Component
         'permission' => 'required',
     ];
 
+    protected $listeners = [
+        'edit' => '$refresh'
+    ];
+
     public function render()
     {
         return view('livewire.managament.create-permission', [

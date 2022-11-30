@@ -37,15 +37,15 @@ class EditPermission extends Component
     {
         $role = Role::find($id);
         $role->syncPermissions($this->access_active, $this->permission);
-        session()->flash('success', 'update permissions of role is success');
         $this->emit('edit');
+        session()->flash('success', 'update permissions of role is success');
     }
 
     public function delete($id)
     {
         $data = Role::find($id);
         $data->syncPermissions([]);
-        session()->flash('delete', 'delete all permissions is success');
         $this->emit('edit');
+        session()->flash('delete', 'delete all permissions is success');
     }
 }

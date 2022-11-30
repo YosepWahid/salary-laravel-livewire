@@ -37,7 +37,10 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/dashboard', 'index')->name('home');
 
     // pengganjian
-    Route::get('/salary', 'salary')->name('view.salary');
+    Route::get('/all/salary', 'allSalary')->name('view.salary');
+    Route::get('/user/salary', 'userSalary')->name('view.userSalary');
+    Route::get('/all/salary/export/{id}', 'export')->name('export');
+    Route::get('/user/salary/export/{id}', 'exportUser')->name('user.export');
 
     // management
     Route::get('/management/user', 'user')->name('view.user');

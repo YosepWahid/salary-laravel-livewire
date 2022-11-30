@@ -1,13 +1,13 @@
 <div class="d-flex align-items-center">
-    <!--session-->
+    {{-- session --}}
     @include('layouts.session')
 
-    <!--update-->
+    {{-- update --}}
     @can('Update Permission')
         @include('livewire.managament.editpermissions.update-permission')
     @endcan
 
-    <!--delete-->
+    {{-- delete --}}
     @can('Delete Permission')
         @include('livewire.managament.editpermissions.delete-permission')
     @endcan

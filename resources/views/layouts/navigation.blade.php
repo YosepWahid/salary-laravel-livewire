@@ -15,8 +15,32 @@
                     <a href="{{ route('home') }}" class="nav-link text-muted text-decoration">Dashboard</a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ Route('view.salary') }}" class="text-muted text-decoration nav-link">PayRoll</a>
+                <li class="nav-item dropdown">
+                    @can('View All Salary')
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            PayRoll
+                        </a>
+                    @elsecan('View User Salary')
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            PayRoll
+                        </a>
+                    @endcan
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        @can('View All Salary')
+                            <a class="dropdown-item" href="{{ Route('view.salary') }}">
+                                All Salary
+                            </a>
+                        @endcan
+
+                        @can('View User Salary')
+                            <a class="dropdown-item" href="{{ Route('view.userSalary') }}">
+                                User Salary
+                            </a>
+                        @endcan
+                    </div>
                 </li>
 
                 <li class="nav-item dropdown">
