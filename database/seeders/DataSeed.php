@@ -16,8 +16,7 @@ class DataSeed extends Seeder
      */
     public function run()
     {
-        $user = User::factory()->count(10)->create();
-
+        // $user = User::factory()->count(5)->create();
 
         // SuperAdmin Prepair
         // $super = User::create([
@@ -34,6 +33,10 @@ class DataSeed extends Seeder
         // $ps = $permission->pluck('name');
         // $data->syncPermissions($ps);
 
+        // user role
+        // $data = User::find(3);
+        // $data->assignRole(['Employee']);
+
         // role
         // Role::create(['name' => 'Employee']);
         // Role::create(['name' => 'Treasurer']);
@@ -47,16 +50,19 @@ class DataSeed extends Seeder
         // Permission::create(['name' => 'Update User']);
         // Permission::create(['name' => 'Detail User']);
         // Permission::create(['name' => 'Delete User']);
+
         // Role Permission
         // Permission::create(['name' => 'View Role']);
         // Permission::create(['name' => 'Create Role']);
         // Permission::create(['name' => 'Update Role']);
         // Permission::create(['name' => 'Delete Role']);
+
         // Permission Permission
         // Permission::create(['name' => 'View Permission']);
         // Permission::create(['name' => 'Create Permission']);
         // Permission::create(['name' => 'Update Permission']);
         // Permission::create(['name' => 'Delete Permission']);
+
         // permission all salary
         // Permission::create(['name' => 'View All Salary']);
         // Permission::create(['name' => 'Create All Salary']);
@@ -65,10 +71,22 @@ class DataSeed extends Seeder
         // Permission::create(['name' => 'Detail All Salary']);
         // Permission::create(['name' => 'Delete All Salary']);
         // Permission::create(['name' => 'PDF All Salary']);
+
         // Permission User Salary
         // Permission::create(['name' => 'View User Salary']);
-        Permission::create(['name' => 'Detail User Salary']);
-        Permission::create(['name' => 'PDF User Salary']);
+        // Permission::create(['name' => 'Detail User Salary']);
+        // Permission::create(['name' => 'PDF User Salary']);
+
+        // permission User ChartPie
+        Permission::create(['name' => 'View Chartpie Salary']);
+        Permission::create(['name' => 'Year Chartpie Salary']);
+        Permission::create(['name' => 'Data Chartpie Salary']);
+
+        // permission Super ChartPie
+        Permission::create(['name' => 'View Super Chartpie Salary']);
+        Permission::create(['name' => 'Year Super Chartpie Salary']);
+        Permission::create(['name' => 'Data Super Chartpie Salary']);
+
         // permission Salary
     }
 }

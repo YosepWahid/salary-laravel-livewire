@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="modal-footer d-flex justify-content-start">
-                    <button type="button" class="btn btn-danger me-3" x-on:click="show = false">Close</button>
+                    <button type="button" class="btn btn-danger me-3" x-on:click="update = false">Close</button>
                     <button type="button" class="btn btn-primary" wire:click="update({{ $post->id }})">Save
                         changes</button>
                 </div>

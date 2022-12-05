@@ -34,9 +34,6 @@ class CreateImportSalary extends Component
         $this->validate();
         Excel::import(new ImportSalary($this->user_id), $this->file);
         $this->emit('post');
-        $this->file = null;
-        $this->iteration++;
-        $this->reset();
         session()->flash('success', 'Import Success');
     }
 }

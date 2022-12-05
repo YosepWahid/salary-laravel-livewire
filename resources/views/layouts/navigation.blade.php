@@ -12,19 +12,23 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link text-muted text-decoration">Dashboard</a>
+                    @can('View Chartpie Salary')
+                        <a href="{{ route('home') }}" class="nav-link text-muted text-decoration">Dashboard</a>
+                    @elsecan('View Super Chartpie Salary')
+                        <a href="{{ route('home') }}" class="nav-link text-muted text-decoration">Dashboard</a>
+                    @endcan
                 </li>
 
                 <li class="nav-item dropdown">
                     @can('View All Salary')
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            PayRoll
+                            Salary
                         </a>
                     @elsecan('View User Salary')
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            PayRoll
+                            Salary
                         </a>
                     @endcan
 

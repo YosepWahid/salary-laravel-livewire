@@ -41,7 +41,7 @@
                                 <span class="text-danger">*</span>
                             </label>
 
-                            <input type="file" class="form-control" id="excel{{ $iteration }}" wire:model="file">
+                            <input type="file" class="form-control" wire:model.defer="file">
 
                             @error('file')
                                 <small class="text-danger">{{ $message }}</small>
