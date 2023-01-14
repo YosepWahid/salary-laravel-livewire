@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row align-items-center justify-content-center" style="height: 90vh">
-            <div class="col-md-6">
-                <h3 class="text-center"><span class="iconify me-2" data-icon="akar-icons:money"></span>Application PayRoll</h3>
+            <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+                <h3 class="text-center"><span class="iconify me-2" data-icon="akar-icons:money"></span>Application Salary</h3>
                 <div class="card">
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">

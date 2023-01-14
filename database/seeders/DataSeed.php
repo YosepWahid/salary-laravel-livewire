@@ -21,9 +21,9 @@ class DataSeed extends Seeder
         // SuperAdmin Prepair
         // $super = User::create([
         //     'name' => "YosepWahid",
-        //     'email' => "yosep2377@gmail.com",
+        //     'email' => "yosep@gmail.com",
         //     'active' => 1,
-        //     'password' => bcrypt("yosep123wahid"),
+        //     'password' => bcrypt("1234566"),
         // ]);
         // $super->assignRole(['SuperAdmin']);
 
@@ -40,7 +40,6 @@ class DataSeed extends Seeder
         // role
         // Role::create(['name' => 'Employee']);
         // Role::create(['name' => 'Treasurer']);
-        // Role::create(['name' => 'Staff']);
         // Role::create(['name' => 'Admin']);
         // Role::create(['name' => 'SuperAdmin']);
 
@@ -78,15 +77,16 @@ class DataSeed extends Seeder
         // Permission::create(['name' => 'PDF User Salary']);
 
         // permission User ChartPie
-        Permission::create(['name' => 'View Chartpie Salary']);
-        Permission::create(['name' => 'Year Chartpie Salary']);
-        Permission::create(['name' => 'Data Chartpie Salary']);
+        // Permission::create(['name' => 'View Chartpie Salary']);
+        // Permission::create(['name' => 'Year Chartpie Salary']);
+        // Permission::create(['name' => 'Data Chartpie Salary']);
 
         // permission Super ChartPie
-        Permission::create(['name' => 'View Super Chartpie Salary']);
-        Permission::create(['name' => 'Year Super Chartpie Salary']);
-        Permission::create(['name' => 'Data Super Chartpie Salary']);
+        // Permission::create(['name' => 'View Super Chartpie Salary']);
+        // Permission::create(['name' => 'Year Super Chartpie Salary']);
+        // Permission::create(['name' => 'Data Super Chartpie Salary']);
 
-        // permission Salary
+        // Permission Super Modal
+        // Permission::create(['name' => 'View Super Modal']);
     }
 }

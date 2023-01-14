@@ -20,7 +20,7 @@ use Illuminate\Routing\RouteUri;
 
 Route::get('/', function () {
     if (Auth::check()) {
-        return back();
+        return redirect('/dashboard');
     } else {
         return redirect('/login');
     }

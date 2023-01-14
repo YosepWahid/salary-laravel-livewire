@@ -12,11 +12,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    @can('View Chartpie Salary')
-                        <a href="{{ route('home') }}" class="nav-link text-muted text-decoration">Dashboard</a>
-                    @elsecan('View Super Chartpie Salary')
-                        <a href="{{ route('home') }}" class="nav-link text-muted text-decoration">Dashboard</a>
-                    @endcan
+                    <a href="{{ route('home') }}" class="nav-link text-muted text-decoration">Dashboard</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -117,6 +113,7 @@
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
+                                <button type="submit">Logout</button>
                             </form>
                         </div>
                     </li>
